@@ -1,5 +1,29 @@
 # Changelog
 
+## [2026.11.10](https://github.com/jdx/mise/releases/tag/v2026.11.10) - 2026-11-17
+
+### 🚀 Features
+
+- **(bootstrap)** enable services without starting or stopping them by @jdx in [#15759](https://github.com/jdx/mise/pull/15759)
+
+### 🐛 Bug Fixes
+
+- **(install)** refresh installed versions after waiting on an install lock by @jdx in [#15757](https://github.com/jdx/mise/pull/15757)
+- **(java)** pick the newest build in ls, runtime symlinks, lockfile and outdated by @jdx in [#15756](https://github.com/jdx/mise/pull/15756)
+- **(lock)** leave tool_config.locked lockfiles alone after installs by @jdx in [#15761](https://github.com/jdx/mise/pull/15761)
+
+### 📦️ Dependency Updates
+
+- update aube to v2.10.1 by @renovate[bot] in [#15792](https://github.com/jdx/mise/pull/15792)
+- update jdx crates to v7.4.0 by @renovate[bot] in [#15793](https://github.com/jdx/mise/pull/15793)
+
+### 📦 Aqua Registry Updates
+
+#### New Packages (2)
+
+- `macstadium.com/orka`
+- [`zavoloklom/docker-compose-linter`](https://github.com/zavoloklom/docker-compose-linter)
+
 ## [2026.11.9](https://github.com/jdx/mise/releases/tag/v2026.11.9) - 2026-11-16
 
 ### 🚀 Features

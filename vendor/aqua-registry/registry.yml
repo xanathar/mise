@@ -67604,6 +67604,30 @@ packages:
           - goos: windows
             format: zip
   - type: http
+    name: macstadium.com/orka
+    description: CLI for the Orka 4.x virtualization platform on Apple hardware
+    link: https://docs.macstadium.com/orka/orka-overview/tools-integrations
+    url: https://cli-builds-public.s3.eu-west-1.amazonaws.com/official/{{.Version}}/orka/{{.OS}}/{{.Arch}}/orka.{{.Format}}
+    replacements:
+      darwin: macos
+    overrides:
+      - goos: darwin
+        format: pkg
+        files:
+          - name: orka
+            src: orka.pkg/Payload/orka
+      - goos: linux
+        format: tar.gz
+        files:
+          - name: orka
+      - goos: windows
+        url: https://cli-builds-public.s3.eu-west-1.amazonaws.com/official/{{.Version}}/orka/{{.OS}}/{{.Arch}}/orka.exe
+        format: raw
+    supported_envs:
+      - darwin
+      - linux
+      - windows/amd64
+  - type: http
     name: macstadium.com/orka3
     description: CLI for the Orka virtualization platform on Apple hardware
     link: https://docs.macstadium.com/orka/orka-overview/tools-integrations
@@ -110726,6 +110750,29 @@ packages:
           type: github_release
           asset: checksums.txt
           algorithm: sha256
+  - type: github_release
+    repo_owner: zavoloklom
+    repo_name: docker-compose-linter
+    description: A command-line tool for validating and enforcing best practices in Docker Compose files
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: "true"
+        format: raw
+        files:
+          - name: dclint
+        supported_envs:
+          - linux
+        overrides:
+          - goos: linux
+            asset: dclint-alpine-{{.Arch}}
+            variants:
+              - key: libc
+                value: musl
+          - goos: linux
+            asset: dclint-bullseye-{{.Arch}}
+            variants:
+              - key: libc
+                value: glibc
   - type: github_release
     repo_owner: zegl
     repo_name: kube-score
